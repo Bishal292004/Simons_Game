@@ -2,6 +2,10 @@
 
 A simple browser-based Simon memory game built with HTML, CSS, and JavaScript. The game shows a growing sequence of colored buttons, and the player must repeat the sequence correctly to move to the next level.
 
+## Play this here
+
+https://simonsgame2.netlify.app/
+
 ## Features
 
 - Starts when the player presses any key
