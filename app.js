@@ -38,7 +38,21 @@ function levelUp(){
     flashBtn(randBtn);
 }
 
-
+function checkAns(idx){
+    if(gameSeq[idx] === playerSeq[idx]){
+        console.log("same key press")
+        if(gameSeq.length === playerSeq.length){
+            setTimeout(levelUp, 500);
+        }
+    }else{
+        h2.innerHTML = `Wrong key press<br>Score: ${level}, <br>Press any key to restart`;
+        document.querySelector("body").style.backgroundColor = "red";
+        setTimeout(function (){
+            document.querySelector("body").style.backgroundColor = "white";
+        }, 150);
+        reset();
+    }
+}
 
 function btnPress(){
     let btn = this;
@@ -57,3 +71,9 @@ for(btn of allbtn){
     btn.addEventListener('click', btnPress);
 }
 
+function reset(){
+    gameStarted = false;
+    gameSeq = [];
+    playerSeq = [];
+    level = 0;
+}
